@@ -27,8 +27,10 @@ POST_LIMIT = 1
 
 
 async def send_message(channel_id: int, text: str, post_url: str):
-    await bot.send_photo(channel_id,post_url, text)
-
+    try:
+        await bot.send_photo(channel_id,post_url, text)
+    except Exception as err:
+        await bot.send_message(682382931, err)
 
 
 async def main():
@@ -40,10 +42,8 @@ async def main():
         item = await memes_submission.__anext__()
         if item.title not in posted:
             posted.append(item.title)
-            try:
-                await send_message(CHANNEL_ID,item.title, item.url)
-            except Exception as err:
-                await bot.send_message(682382931, err)
+            await send_message(CHANNEL_ID,item.title, item.url)
+            
 
 
 loop = asyncio.get_event_loop()
