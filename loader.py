@@ -20,7 +20,7 @@ print(reddit)
 
 
 posted = []
-TIMEOUT = 360
+TIMEOUT = 60
 SUBREDDIT_NAME = 'wholesomeanimemes'
 POST_LIMIT = 1
 
