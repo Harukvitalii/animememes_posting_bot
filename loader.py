@@ -21,7 +21,7 @@ print(reddit)
 
 
 posted = []
-TIMEOUT = 60
+TIMEOUT = 10
 SUBREDDIT_NAME = ['wholesomeanimemes','Animemes','anime_irl', 'animenocontext', "goodanimemes"]
 POST_LIMIT = 1
 
