@@ -1,5 +1,4 @@
-from tkinter import PhotoImage
-from xmlrpc import client
+
 from config import BOT_TOKEN,CHANNEL_ID,REDDIT_ID,REDDIT_SECRET
 from aiogram import Bot, types
 import asyncpraw
