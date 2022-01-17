@@ -1,9 +1,10 @@
 
+from curses.ascii import SUB
 from config import BOT_TOKEN,CHANNEL_ID,REDDIT_ID,REDDIT_SECRET
 from aiogram import Bot, types
 import asyncpraw
 import asyncio
-
+import random
 
 
 bot = Bot(token=BOT_TOKEN, parse_mode=types.ParseMode.HTML)
@@ -21,7 +22,7 @@ print(reddit)
 
 posted = []
 TIMEOUT = 60
-SUBREDDIT_NAME = 'wholesomeanimemes'
+SUBREDDIT_NAME = ['wholesomeanimemes','anime']
 POST_LIMIT = 1
 
 
@@ -33,7 +34,8 @@ async def send_message(channel_id: int, text: str, post_url: str):
 async def main():
     while True:
         await asyncio.sleep(TIMEOUT)
-        memes_submission = await reddit.subreddit(SUBREDDIT_NAME)
+        sub_name = random.choice(SUBREDDIT_NAME)
+        memes_submission = await reddit.subreddit(sub_name)
         memes_submission = memes_submission.new(limit=POST_LIMIT)
         item = await memes_submission.__anext__()
         if item.title not in posted:
