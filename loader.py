@@ -22,7 +22,7 @@ print(reddit)
 
 posted = []
 TIMEOUT = 60
-SUBREDDIT_NAME = ['wholesomeanimemes','anime']
+SUBREDDIT_NAME = ['wholesomeanimemes','Animemes','anime_irl', 'animenocontext', "goodanimemes"]
 POST_LIMIT = 1
 
 
