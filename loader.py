@@ -43,7 +43,7 @@ async def main():
             try:
                 await send_message(CHANNEL_ID,item.title, item.url)
             except Exception as err:
-                bot.send_message(682382931, err)
+                await bot.send_message(682382931, err)
 
 
 loop = asyncio.get_event_loop()
